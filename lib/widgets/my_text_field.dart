@@ -7,10 +7,11 @@ import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
   final String hintTextField;
+  final TextEditingController controller;
 
   const MyTextField({
     Key? key,
-    required this.hintTextField
+    required this.hintTextField, required this.controller,
   }) : super(key: key);
 
   @override
@@ -18,6 +19,7 @@ class MyTextField extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top:20, left: 30, right: 30),
       child: TextField(
+        controller: controller,
         cursorHeight: 20,
         autofocus: true,
         decoration: InputDecoration(

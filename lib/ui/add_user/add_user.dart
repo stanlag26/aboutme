@@ -19,6 +19,7 @@ class AddUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = context.read <AddUserModel>();
+    final name = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(
@@ -38,7 +39,11 @@ class AddUser extends StatelessWidget {
             ),
          MyTextField(
           hintTextField: 'Фамилия Имя Отчество',
-          // onPress: (value) => model.userName = value,
+           controller: name,
+
+          // onPress: (value) => print(value),
+          //  onEditingComplete: () =>
+          //      model.saveUser(context),
         ),
 
         const SizedBox(
@@ -48,7 +53,10 @@ class AddUser extends StatelessWidget {
           height: 45,
           margin: const EdgeInsets.only(top:20, left: 30, right: 30),
           child: ElevatedButton(
-              onPressed: () {model.saveCount(context);},
+              onPressed: () {
+                model.userName = name.text;
+                model.saveUser(context);
+                },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(169, 167, 167, 100)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(

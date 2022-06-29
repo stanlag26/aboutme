@@ -4,26 +4,23 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../ui/users/users_model.dart';
 
 class MyAvatar extends StatelessWidget {
-  final String avatarName;
-  final String avatarPhoto;
-  final VoidCallback onPress;
-
-
-
+  final int indexList;
   const MyAvatar({
     Key? key,
-    required this.avatarName,
-    required this.avatarPhoto,
-    required this.onPress,
+    required this.indexList,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final model = context.read <UsersModel>();
     return Ink(
       child: InkWell(
-        onTap: onPress,
+        onTap: () {Navigator.pushNamed(context, '/all_category');},
         child: Container(
           margin: const EdgeInsets.only(top: 20, left: 30, right: 30, ),
           child: Row(
@@ -34,13 +31,13 @@ class MyAvatar extends StatelessWidget {
                 backgroundColor: Colors.black,
                 child: CircleAvatar(
                   radius: 40,
-                  backgroundImage:AssetImage(avatarPhoto),
+                  backgroundImage:AssetImage( 'images/stalin.jpeg',),
                 ),
               ),
               const SizedBox(
                 width: 30,
               ),
-              Expanded(child: Text( avatarName, style: TextStyle(fontSize: 25))),
+              Expanded(child: Text( model.users[indexList].name, style: TextStyle(fontSize: 25))),
             ],
           ),
         ),

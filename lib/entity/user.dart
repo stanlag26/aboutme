@@ -16,6 +16,7 @@ class User extends HiveObject{
     documents ??= HiveList(box);
     documents?.add(document);
     save();
-
   }
+  @override
+  String toString() => name;
 }

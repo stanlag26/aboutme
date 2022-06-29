@@ -21,14 +21,14 @@ class AddCategory extends StatelessWidget {
       body: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            const MyTextField(
-              hintTextField: 'Название документа',
-            ),const MyTextField(
-              hintTextField: 'Заметки',
-            ),
-            const MyTextField(
-              hintTextField: 'Окончание срока действия',
-            ),
+            // const MyTextField(
+            //   hintTextField: 'Название документа',
+            // ),const MyTextField(
+            //   hintTextField: 'Заметки',
+            // ),
+            // const MyTextField(
+            //   hintTextField: 'Окончание срока действия',
+            // ),
             const SizedBox(
               height: 10,
             ),

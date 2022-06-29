@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) =>  const Users(),
+          '/': (context) =>  const UsersProviderWidget(),
           '/add_user': (context) =>  const AddUserProviderWidget(),
           '/all_category': (context) =>  AllCategory(),
           '/all_category/category':(context) =>  Category(),

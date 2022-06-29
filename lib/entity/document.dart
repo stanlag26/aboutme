@@ -15,4 +15,8 @@ class Document extends HiveObject{
   String photo;
 
   Document({ required this.id, required this.name, required this.data, required this.photo});
+
+
+  @override
+  String toString() => name;
 }
